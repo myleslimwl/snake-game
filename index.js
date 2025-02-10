@@ -83,3 +83,12 @@ function moveSnake() {
     snake.pop();
   }
 }
+
+function drawSnake() {
+  ctx.fillStyle = snakeColor;
+  ctx.strokeStyle = snakeBorder;
+  snake.forEach(snakePart => {
+    ctx.fillRect(snakePart.x, snakePart.y, unitSize, unitSize);
+    ctx.strokeRect(0, 0, gameWidth, gameHeight);
+  })
+}
