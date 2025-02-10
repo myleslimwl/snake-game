@@ -21,3 +21,16 @@ let snake = [
   {x: unitSize, y: 0},
   {x: 0, y: 0}
 ]
+
+addEventListener('keydown', changeDirection);
+resetBtn.addEventListener('click', resetGame);
+
+startGame();
+
+function startGame() {
+  running = true;
+  scoreText.textContent = score;
+  createFood();
+  drawFood();
+  nextTick();
+}
