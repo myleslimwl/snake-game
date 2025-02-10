@@ -44,7 +44,7 @@ function nextTick() {
       drawSnake();
       checkGameOver();
       nextTick();
-    }, 1000);  
+    }, 750);  
   }
   else {
     displayGameOver();
@@ -68,4 +68,18 @@ function drawFood() {
 function clearBoard() {
   ctx.fillStyle = boardBackground;
   ctx.fillRect(0, 0, gameWidth, gameHeight);
+}
+
+function moveSnake() {
+  const headX = snake[0].x + xVelocity;
+  const headY = snake[0].y + yVelocity;
+  snake.unshift({x: headX, y: headY});
+  if(headX === foodX && headY === foodY) {
+    score++;
+    scoreText.textContent = score;
+    createFood();
+  }
+  else {
+    snake.pop();
+  }
 }
