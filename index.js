@@ -64,3 +64,8 @@ function drawFood() {
   ctx.fillStyle = foodColor;
   ctx.fillRect(foodX, foodY, unitSize, unitSize);
 }
+
+function clearBoard() {
+  ctx.fillStyle = boardBackground;
+  ctx.fillRect(0, 0, gameWidth, gameHeight);
+}
